@@ -267,9 +267,18 @@
   background-color: transparent;
   cursor: pointer;
   transition: all .2s;
+  
+  & span {
+    margin-left: 3px;
+    transition: margin-left .2s;
+  }
 
   &:hover {
     color: var(--color-grey-dark-1);
+
+    & span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -355,5 +364,64 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+.review {
+  background-color: white;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+  position: relative;
+  
+  &__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+  }
+
+  &__user-box {
+    margin-right: auto;
+    margin-left: 2rem;
+  }
+
+  &__user-name {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  &__user-date {
+    font-size: 75%;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    color: var(--color-primary);
+    font-size: 2.25rem;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    line-height: 1;
+    color: var(--color-grey-light-2);
+    font-family: sans-serif;
+    z-index: 1;
   }
 }
